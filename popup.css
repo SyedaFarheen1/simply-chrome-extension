@@ -1,3 +1,4 @@
+/* Light mode styles */
 body {
   width: 300px;
   height: 200px;
@@ -38,4 +39,26 @@ button {
 
 button:hover {
   background-color: #3a7fd5;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+
+  p {
+    color: #d1d5db;
+  }
+
+  button {
+    background-color: #2563eb;
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  }
+
+  button:hover {
+    background-color: #1d4ed8;
+  }
 }
