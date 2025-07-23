@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Simply",
+  "version": "1.0",
+  "description": "Explains webpages in simple words for elders and beginners.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Simply",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
