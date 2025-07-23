@@ -1,4 +1,4 @@
-/* Light mode styles */
+/* Base styles */
 body {
   width: 300px;
   height: 200px;
@@ -10,6 +10,65 @@ body {
   justify-content: space-between;
   background-color: #f9fafb;
   color: #1f2937;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Toggle container */
+.toggle-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color: #4b5563;
+}
+
+/* Toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  transition: 0.4s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4a90e2;
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
 }
 
 h1 {
@@ -22,6 +81,7 @@ p {
   font-size: 14px;
   color: #4b5563;
   margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
 
 button {
@@ -41,24 +101,21 @@ button:hover {
   background-color: #3a7fd5;
 }
 
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1f2937;
-    color: #f9fafb;
-  }
+/* 🌙 Manual Dark Mode */
+body.dark {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
 
-  p {
-    color: #d1d5db;
-  }
+body.dark p {
+  color: #d1d5db;
+}
 
-  button {
-    background-color: #2563eb;
-    color: white;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  }
+body.dark button {
+  background-color: #2563eb;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
 
-  button:hover {
-    background-color: #1d4ed8;
-  }
+body.dark button:hover {
+  background-color: #1d4ed8;
 }
